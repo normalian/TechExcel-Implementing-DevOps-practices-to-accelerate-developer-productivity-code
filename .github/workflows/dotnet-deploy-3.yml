@@ -1,4 +1,4 @@
-name: .NET CI
+name: .NET CI - 03
 
 env:
   registryName: mcl4l26dv5zbempnpreg.azurecr.io
