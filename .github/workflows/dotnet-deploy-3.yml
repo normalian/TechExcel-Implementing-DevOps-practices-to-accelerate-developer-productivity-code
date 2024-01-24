@@ -64,6 +64,11 @@ jobs:
   deploy-to-dev:
   
     runs-on: ubuntu-latest
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: dockerBuildPush
     environment:
       name: dev
@@ -86,6 +91,11 @@ jobs:
   deploy-to-test:
   
     runs-on: ubuntu-latest
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: deploy-to-dev
     environment:
       name: test
@@ -110,6 +120,11 @@ jobs:
   deploy-to-prod:
   
     runs-on: ubuntu-latest
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: deploy-to-test
     environment:
       name: prod
